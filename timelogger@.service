@@ -1,0 +1,11 @@
+[Unit]
+Description=Logs boot and shutdown times in user directory
+
+[Service]
+User=%i
+RemainAfterExit=true
+ExecStart=/usr/bin/timelogger start
+ExecStop=/usr/bin/timelogger stop
+
+[Install]
+WantedBy=multi-user.target
